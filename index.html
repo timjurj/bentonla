@@ -3,7 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BENTONLA.COM</title>
+
+<title>BentonLA.com — Benton, Louisiana Local Business Directory</title>
+<meta name="description" content="BentonLA.com — The complete local business directory for Benton, Louisiana and Bossier Parish. Find restaurants, home services, real estate, churches, cleaning, and more.">
+<meta name="keywords" content="Benton LA businesses, Bossier Parish directory, Benton Louisiana, local businesses Benton LA, Benton LA restaurants, home services Benton LA">
+<meta name="robots" content="index, follow">
+<meta name="author" content="BentonLA.com">
+<link rel="canonical" href="https://www.bentonla.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BentonLA.com — Benton, Louisiana Business Directory">
+<meta property="og:description" content="The complete guide to businesses, restaurants, churches, and services in Benton, LA and Bossier Parish.">
+<meta property="og:url" content="https://www.bentonla.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BentonLA.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BentonLA.com — Benton, Louisiana Business Directory">
+<meta name="twitter:description" content="Find local businesses, restaurants, churches, and services in Benton, LA and Bossier Parish.">
+
+<!-- Google Analytics — replace G-XXXXXXXXXX with your real GA4 ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H924WKY88X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H924WKY88X');
+</script>
+
+<!-- Google Search Console verification — replace content value with your actual tag -->
+<!-- <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE"> -->
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Oswald:wght@400;500;700&display=swap');
 
@@ -188,18 +219,9 @@
     color: #111;
     line-height: 1.1;
   }
-  .featured-block .sponsor-name a {
-    color: #111;
-  }
-  .featured-block .sponsor-name a:hover {
-    color: #cc0000;
-    text-decoration: none;
-  }
-  .featured-block .sponsor-tag {
-    font-size: 12px;
-    color: #555;
-    margin-top: 4px;
-  }
+  .featured-block .sponsor-name a { color: #111; }
+  .featured-block .sponsor-name a:hover { color: #cc0000; text-decoration: none; }
+  .featured-block .sponsor-tag { font-size: 12px; color: #555; margin-top: 4px; }
   .featured-block .sponsor-cta {
     display: inline-block;
     margin-top: 10px;
@@ -213,11 +235,7 @@
     padding: 6px 16px;
     text-decoration: none;
   }
-  .featured-block .sponsor-cta:hover {
-    background: #cc0000;
-    color: #fff;
-    text-decoration: none;
-  }
+  .featured-block .sponsor-cta:hover { background: #cc0000; color: #fff; text-decoration: none; }
 
   /* NEW TO BENTON BOX */
   .newcomer-box {
@@ -267,7 +285,7 @@
     text-transform: uppercase;
   }
 
-  /* BREAKING / PROMO TAG */
+  /* TAGS */
   .tag-new {
     background: #cc0000;
     color: #fff;
@@ -291,16 +309,10 @@
     vertical-align: middle;
   }
 
-  hr.col-rule {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 10px 0;
-  }
+  hr.col-rule { border: none; border-top: 1px solid #ccc; margin: 10px 0; }
 
   @media (max-width: 680px) {
-    #main {
-      grid-template-columns: 1fr;
-    }
+    #main { grid-template-columns: 1fr; }
     .divider { display: none; }
     #masthead h1 { font-size: 32px; }
   }
@@ -333,7 +345,7 @@
 
 <!-- SEARCH -->
 <div id="searchbar">
-  <input type="text" id="searchInput" placeholder="SEARCH BENTON BUSINESSES..." onkeyup="filterListings()" />
+  <input type="text" id="searchInput" placeholder="SEARCH BENTON BUSINESSES..." onkeyup="filterListings()" aria-label="Search Benton Louisiana businesses" />
 </div>
 
 <!-- MAIN 3-COLUMN LAYOUT -->
@@ -342,32 +354,34 @@
   <!-- LEFT COLUMN -->
   <div class="col" id="col-left">
 
-    <!-- Featured Sponsor Block -->
-    <div class="featured-block">
+    <div class="featured-block" itemscope itemtype="https://schema.org/LocalBusiness">
       <div class="sponsor-label">★ Featured Sponsor ★</div>
-      <div class="sponsor-name"><a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Gleaux Cleaning</a></div>
-      <div class="sponsor-tag">Benton's Premier Cleaning Service</div>
-      <div style="font-size:11px; color:#888; margin-top:4px;">Residential &amp; Commercial · Move-In/Out</div>
-      <a class="sponsor-cta" href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Get a Free Quote »</a>
+      <div class="sponsor-name"><a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory&utm_campaign=featured" itemprop="url">Gleaux Cleaning</a></div>
+      <div class="sponsor-tag" itemprop="description">Benton's Premier Cleaning Service</div>
+      <div style="font-size:11px; color:#888; margin-top:4px;">Residential &amp; Commercial · Move-In/Out · Bossier Parish</div>
+      <meta itemprop="name" content="Gleaux Cleaning LLC">
+      <meta itemprop="areaServed" content="Benton, Louisiana">
+      <a class="sponsor-cta" href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory&utm_campaign=featured">Get a Free Quote »</a>
     </div>
 
-    <!-- New to Benton -->
     <div class="newcomer-box">
-      <strong>🏡 New to Benton?</strong>
-      Just moved in? Get your home professionally cleaned before you unpack. <a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Gleaux Cleaning</a> serves all of Bossier Parish.
+      <strong>🏡 New to Benton, LA?</strong>
+      Just moved in? Get your Benton home professionally cleaned before you unpack. <a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory&utm_campaign=newcomer">Gleaux Cleaning</a> serves all of Bossier Parish.
     </div>
 
-    <div class="section-head">Home Services</div>
+    <h2 class="section-head">Home Services — Benton, LA</h2>
 
-    <div class="listing" data-cat="home services">
-      <span class="biz-name featured"><span class="bullet">»</span><a href="https://gleauxcleaning.com">GLEAUX CLEANING LLC</a> <span class="tag-rec">Recommended</span></span>
-      <span class="biz-sub">Residential &amp; Commercial Cleaning</span>
-      <span class="biz-phone">(318) 555-0101</span>
+    <div class="listing" data-cat="home services" itemscope itemtype="https://schema.org/LocalBusiness">
+      <span class="biz-name featured"><span class="bullet">»</span><a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory" itemprop="url">GLEAUX CLEANING LLC</a> <span class="tag-rec">Recommended</span></span>
+      <span class="biz-sub" itemprop="description">Residential &amp; Commercial Cleaning — Benton &amp; Bossier Parish</span>
+      <span class="biz-phone" itemprop="telephone">(318) 555-0101</span>
+      <meta itemprop="name" content="Gleaux Cleaning LLC">
+      <meta itemprop="areaServed" content="Benton, Louisiana">
     </div>
     <hr class="col-rule">
     <div class="listing" data-cat="home services">
       <span class="biz-name"><span class="bullet">·</span><a href="#">North LA Handyman</a></span>
-      <span class="biz-sub">Repairs, Installs, Remodeling</span>
+      <span class="biz-sub">Repairs, Installs, Remodeling — Bossier Parish</span>
       <span class="biz-phone">(318) 555-0606</span>
     </div>
     <hr class="col-rule">
@@ -383,7 +397,7 @@
       <span class="biz-phone">(318) 555-0808</span>
     </div>
 
-    <div class="section-head">Real Estate</div>
+    <h2 class="section-head">Real Estate — Benton, LA</h2>
 
     <div class="listing" data-cat="real estate">
       <span class="biz-name"><span class="bullet">»</span><a href="#">Benton Realty Group</a></span>
@@ -403,11 +417,11 @@
       <span class="biz-phone">(318) 555-0210</span>
     </div>
 
-    <div class="section-head">Financial &amp; Legal</div>
+    <h2 class="section-head">Financial &amp; Legal</h2>
 
     <div class="listing" data-cat="financial legal">
       <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Tax &amp; Accounting</a></span>
-      <span class="biz-sub">Personal &amp; Business Returns</span>
+      <span class="biz-sub">Personal &amp; Business Returns — Benton, LA</span>
       <span class="biz-phone">(318) 555-0901</span>
     </div>
     <hr class="col-rule">
@@ -426,15 +440,15 @@
 
     <div style="text-align:center; border-bottom: 2px solid #111; padding-bottom:12px; margin-bottom:14px;">
       <div style="font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:2px;">Bossier Parish, Louisiana</div>
-      <div style="font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase;">THE COMPLETE GUIDE<br>TO BENTON</div>
-      <div style="font-size:11px; color:#888; margin-top:6px;">Updated Daily · Free Listings Available</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase;">THE COMPLETE GUIDE<br>TO BENTON, LA</div>
+      <div style="font-size:11px; color:#888; margin-top:6px;">Updated Weekly · Free Listings Available</div>
     </div>
 
-    <div class="section-head">Restaurants &amp; Food</div>
+    <h2 class="section-head">Restaurants &amp; Food — Benton, LA</h2>
 
     <div class="listing" data-cat="restaurants food">
       <span class="biz-name"><span class="bullet">»</span><a href="#">The Benton Grill</a></span>
-      <span class="biz-sub">Southern Comfort Food · Dine-In &amp; Takeout</span>
+      <span class="biz-sub">Southern Comfort Food · Dine-In &amp; Takeout · Benton, LA</span>
       <span class="biz-phone">(318) 555-0303</span>
     </div>
     <hr class="col-rule">
@@ -456,11 +470,11 @@
       <span class="biz-phone">(318) 555-0312</span>
     </div>
 
-    <div class="section-head">Health &amp; Medical</div>
+    <h2 class="section-head">Health &amp; Medical — Bossier Parish</h2>
 
     <div class="listing" data-cat="health medical">
       <span class="biz-name"><span class="bullet">»</span><a href="#">Bossier Family Dentistry</a> <span class="tag-new">New</span></span>
-      <span class="biz-sub">General · Pediatric · Orthodontics</span>
+      <span class="biz-sub">General · Pediatric · Orthodontics — Benton Area</span>
       <span class="biz-phone">(318) 555-0404</span>
     </div>
     <hr class="col-rule">
@@ -482,7 +496,7 @@
       <span class="biz-phone">(318) 555-0412</span>
     </div>
 
-    <div class="section-head">Automotive</div>
+    <h2 class="section-head">Automotive</h2>
 
     <div class="listing" data-cat="automotive">
       <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Auto Repair</a></span>
@@ -496,9 +510,8 @@
       <span class="biz-phone">(318) 555-0502</span>
     </div>
 
-    <!-- List CTA -->
     <div class="list-cta">
-      <div style="margin-bottom:6px; color:#888;">Own a Benton business?</div>
+      <div style="margin-bottom:6px; color:#888;">Own a Benton, LA business?</div>
       <a href="#">» Add Your Free Listing «</a>
       &nbsp;|&nbsp;
       <a href="#" style="color:#cc0000;">» Go Premium — $49/mo «</a>
@@ -511,7 +524,7 @@
   <!-- RIGHT COLUMN -->
   <div class="col" id="col-right">
 
-    <div class="section-head">Churches &amp; Faith</div>
+    <h2 class="section-head">Churches &amp; Faith — Benton, LA</h2>
 
     <div class="listing" data-cat="churches faith">
       <span class="biz-name"><span class="bullet">·</span><a href="#">First Baptist Church Benton</a></span>
@@ -531,7 +544,7 @@
       <span class="biz-phone">(318) 555-0507</span>
     </div>
 
-    <div class="section-head">Education &amp; Childcare</div>
+    <h2 class="section-head">Education &amp; Childcare</h2>
 
     <div class="listing" data-cat="education childcare">
       <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Parish Schools</a></span>
@@ -551,7 +564,7 @@
       <span class="biz-phone">(318) 555-0603</span>
     </div>
 
-    <div class="section-head">Shopping &amp; Retail</div>
+    <h2 class="section-head">Shopping &amp; Retail</h2>
 
     <div class="listing" data-cat="shopping retail">
       <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Hardware &amp; Supply</a></span>
@@ -571,10 +584,10 @@
       <span class="biz-phone">(318) 555-0703</span>
     </div>
 
-    <div class="section-head">Government &amp; Utilities</div>
+    <h2 class="section-head">Government &amp; Utilities</h2>
 
     <div class="listing" data-cat="government utilities">
-      <span class="biz-name"><span class="bullet">·</span><a href="#">Town of Benton</a></span>
+      <span class="biz-name"><span class="bullet">·</span><a href="https://www.townofbenton.com">Town of Benton, Louisiana</a></span>
       <span class="biz-sub">City Hall · Permits · Public Works</span>
       <span class="biz-phone">(318) 965-2781</span>
     </div>
@@ -597,13 +610,52 @@
 <!-- FOOTER -->
 <div id="footer">
   <div style="margin-bottom:6px;">
-    <a href="#">HOME</a> &nbsp;|&nbsp;
+    <a href="/">HOME</a> &nbsp;|&nbsp;
     <a href="#">ADD LISTING</a> &nbsp;|&nbsp;
     <a href="#">ADVERTISE</a> &nbsp;|&nbsp;
-    <a href="#">CONTACT</a>
+    <a href="#">CONTACT</a> &nbsp;|&nbsp;
+    <a href="/sitemap.xml">SITEMAP</a>
   </div>
-  <div>© 2025 BENTONLA.COM · ALL RIGHTS RESERVED · BOSSIER PARISH, LOUISIANA</div>
+  <div>© 2026 BENTONLA.COM · ALL RIGHTS RESERVED · BENTON, LOUISIANA · BOSSIER PARISH</div>
 </div>
+
+<!-- SCHEMA MARKUP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BentonLA.com",
+  "url": "https://www.bentonla.com",
+  "description": "The complete local business directory for Benton, Louisiana and Bossier Parish",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.bentonla.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BentonLA.com",
+  "url": "https://www.bentonla.com",
+  "description": "Benton, Louisiana local business directory serving Bossier Parish",
+  "areaServed": {
+    "@type": "City",
+    "name": "Benton",
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "Bossier Parish",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Louisiana"
+      }
+    }
+  }
+}
+</script>
 
 <script>
   // Dateline
@@ -620,7 +672,6 @@
       el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
     });
     document.querySelectorAll('hr.col-rule').forEach(hr => {
-      // hide HR if next sibling listing is hidden
       const next = hr.nextElementSibling;
       if (next && next.classList.contains('listing')) {
         hr.style.display = next.style.display === 'none' ? 'none' : '';
