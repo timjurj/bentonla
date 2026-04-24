@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BENTONLA.COM</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Oswald:wght@400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5f2eb;
+    color: #111;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 14px;
+  }
+
+  a { color: #00008b; text-decoration: none; }
+  a:hover { text-decoration: underline; color: #cc0000; }
+  a:visited { color: #551a8b; }
+
+  /* MASTHEAD */
+  #masthead {
+    text-align: center;
+    padding: 18px 20px 12px;
+    border-bottom: 3px solid #111;
+  }
+
+  #masthead h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #111;
+    line-height: 1;
+  }
+
+  #masthead .tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 4px;
+  }
+
+  #masthead .dateline {
+    font-size: 11px;
+    color: #777;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* TICKER */
+  #ticker {
+    background: #111;
+    color: #f5f2eb;
+    padding: 5px 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #ticker-inner {
+    display: inline-block;
+    animation: ticker 28s linear infinite;
+  }
+  #ticker-inner span { margin: 0 40px; }
+  @keyframes ticker {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* SEARCH BAR */
+  #searchbar {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #bbb;
+    background: #eeeae0;
+  }
+  #searchbar input {
+    font-family: 'Courier Prime', monospace;
+    font-size: 13px;
+    padding: 6px 12px;
+    width: 280px;
+    border: 1px solid #999;
+    background: #fff;
+    color: #111;
+  }
+  #searchbar input:focus { outline: 2px solid #00008b; }
+
+  /* MAIN LAYOUT */
+  #main {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr 2px 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .divider {
+    background: #bbb;
+    width: 1px;
+    margin: 12px 0;
+  }
+
+  .col {
+    padding: 16px 18px;
+  }
+
+  /* SECTION HEADERS */
+  .section-head {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 16px;
+  }
+  .section-head:first-child { margin-top: 0; }
+
+  /* LISTINGS */
+  .listing {
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .listing .biz-name {
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+  }
+
+  .listing .biz-name.featured {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .listing .biz-sub {
+    font-size: 11px;
+    color: #666;
+    display: block;
+    margin-top: 1px;
+  }
+
+  .listing .biz-phone {
+    font-size: 11px;
+    color: #333;
+    display: block;
+  }
+
+  .bullet {
+    color: #cc0000;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  /* FEATURED SPONSOR */
+  .featured-block {
+    text-align: center;
+    border: 2px solid #111;
+    padding: 14px 12px;
+    margin-bottom: 14px;
+    background: #fff;
+  }
+  .featured-block .sponsor-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .featured-block .sponsor-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #111;
+    line-height: 1.1;
+  }
+  .featured-block .sponsor-name a {
+    color: #111;
+  }
+  .featured-block .sponsor-name a:hover {
+    color: #cc0000;
+    text-decoration: none;
+  }
+  .featured-block .sponsor-tag {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+  .featured-block .sponsor-cta {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #111;
+    color: #f5f2eb;
+    padding: 6px 16px;
+    text-decoration: none;
+  }
+  .featured-block .sponsor-cta:hover {
+    background: #cc0000;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* NEW TO BENTON BOX */
+  .newcomer-box {
+    border: 1px solid #bbb;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    background: #fffef8;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #444;
+  }
+  .newcomer-box strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+    color: #111;
+  }
+
+  /* FOOTER */
+  #footer {
+    border-top: 3px solid #111;
+    text-align: center;
+    padding: 14px;
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    background: #eeeae0;
+  }
+  #footer a { color: #00008b; font-size: 11px; }
+
+  /* LIST YOUR BUSINESS */
+  .list-cta {
+    text-align: center;
+    border-top: 1px dashed #bbb;
+    padding: 12px;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .list-cta a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* BREAKING / PROMO TAG */
+  .tag-new {
+    background: #cc0000;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .tag-rec {
+    background: #111;
+    color: #f5f2eb;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  hr.col-rule {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 680px) {
+    #main {
+      grid-template-columns: 1fr;
+    }
+    .divider { display: none; }
+    #masthead h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div id="masthead">
+  <div class="tagline">The Official Guide to</div>
+  <h1>BentonLA.com</h1>
+  <div class="tagline">Bossier Parish's Fastest Growing Community</div>
+  <div class="dateline" id="dateline"></div>
+</div>
+
+<!-- TICKER -->
+<div id="ticker">
+  <div id="ticker-inner">
+    <span>★ BENTON'S BUSINESS DIRECTORY</span>
+    <span>NEW BUSINESSES ADDED WEEKLY</span>
+    <span>LIST YOUR BUSINESS FREE</span>
+    <span>SERVING BOSSIER PARISH SINCE 2024</span>
+    <span>PREMIUM LISTINGS AVAILABLE</span>
+    <span>BENTON, LA — POPULATION GROWING FAST</span>
+    <span>★ BENTON'S BUSINESS DIRECTORY</span>
+    <span>NEW BUSINESSES ADDED WEEKLY</span>
+    <span>LIST YOUR BUSINESS FREE</span>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div id="searchbar">
+  <input type="text" id="searchInput" placeholder="SEARCH BENTON BUSINESSES..." onkeyup="filterListings()" />
+</div>
+
+<!-- MAIN 3-COLUMN LAYOUT -->
+<div id="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="col" id="col-left">
+
+    <!-- Featured Sponsor Block -->
+    <div class="featured-block">
+      <div class="sponsor-label">★ Featured Sponsor ★</div>
+      <div class="sponsor-name"><a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Gleaux Cleaning</a></div>
+      <div class="sponsor-tag">Benton's Premier Cleaning Service</div>
+      <div style="font-size:11px; color:#888; margin-top:4px;">Residential &amp; Commercial · Move-In/Out</div>
+      <a class="sponsor-cta" href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Get a Free Quote »</a>
+    </div>
+
+    <!-- New to Benton -->
+    <div class="newcomer-box">
+      <strong>🏡 New to Benton?</strong>
+      Just moved in? Get your home professionally cleaned before you unpack. <a href="https://gleauxcleaning.com?utm_source=bentonla&utm_medium=directory">Gleaux Cleaning</a> serves all of Bossier Parish.
+    </div>
+
+    <div class="section-head">Home Services</div>
+
+    <div class="listing" data-cat="home services">
+      <span class="biz-name featured"><span class="bullet">»</span><a href="https://gleauxcleaning.com">GLEAUX CLEANING LLC</a> <span class="tag-rec">Recommended</span></span>
+      <span class="biz-sub">Residential &amp; Commercial Cleaning</span>
+      <span class="biz-phone">(318) 555-0101</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="home services">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">North LA Handyman</a></span>
+      <span class="biz-sub">Repairs, Installs, Remodeling</span>
+      <span class="biz-phone">(318) 555-0606</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="home services">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Lawn &amp; Landscape</a></span>
+      <span class="biz-sub">Mowing, Trimming, Seasonal Cleanups</span>
+      <span class="biz-phone">(318) 555-0707</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="home services">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Parish Pest Control</a></span>
+      <span class="biz-sub">Residential &amp; Commercial Treatments</span>
+      <span class="biz-phone">(318) 555-0808</span>
+    </div>
+
+    <div class="section-head">Real Estate</div>
+
+    <div class="listing" data-cat="real estate">
+      <span class="biz-name"><span class="bullet">»</span><a href="#">Benton Realty Group</a></span>
+      <span class="biz-sub">Buy · Sell · Rentals · Bossier Parish</span>
+      <span class="biz-phone">(318) 555-0202</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="real estate">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Coldwell Banker Bossier</a></span>
+      <span class="biz-sub">Local Agents, Parish-Wide Listings</span>
+      <span class="biz-phone">(318) 555-0209</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="real estate">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Property Management</a></span>
+      <span class="biz-sub">Rentals &amp; Investment Properties</span>
+      <span class="biz-phone">(318) 555-0210</span>
+    </div>
+
+    <div class="section-head">Financial &amp; Legal</div>
+
+    <div class="listing" data-cat="financial legal">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Tax &amp; Accounting</a></span>
+      <span class="biz-sub">Personal &amp; Business Returns</span>
+      <span class="biz-phone">(318) 555-0901</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="financial legal">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">North Parish Law Group</a></span>
+      <span class="biz-sub">Family Law · Real Estate · Wills</span>
+      <span class="biz-phone">(318) 555-0902</span>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CENTER COLUMN -->
+  <div class="col" id="col-center">
+
+    <div style="text-align:center; border-bottom: 2px solid #111; padding-bottom:12px; margin-bottom:14px;">
+      <div style="font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:2px;">Bossier Parish, Louisiana</div>
+      <div style="font-family:'Oswald',sans-serif; font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase;">THE COMPLETE GUIDE<br>TO BENTON</div>
+      <div style="font-size:11px; color:#888; margin-top:6px;">Updated Daily · Free Listings Available</div>
+    </div>
+
+    <div class="section-head">Restaurants &amp; Food</div>
+
+    <div class="listing" data-cat="restaurants food">
+      <span class="biz-name"><span class="bullet">»</span><a href="#">The Benton Grill</a></span>
+      <span class="biz-sub">Southern Comfort Food · Dine-In &amp; Takeout</span>
+      <span class="biz-phone">(318) 555-0303</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="restaurants food">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Rosa's Tex-Mex</a> <span class="tag-new">New</span></span>
+      <span class="biz-sub">Tacos, Enchiladas, Family Plates</span>
+      <span class="biz-phone">(318) 555-0310</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="restaurants food">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Burger Co.</a></span>
+      <span class="biz-sub">Smash Burgers · Fries · Shakes</span>
+      <span class="biz-phone">(318) 555-0311</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="restaurants food">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Morning Cup Café</a></span>
+      <span class="biz-sub">Coffee, Pastries, Light Lunch</span>
+      <span class="biz-phone">(318) 555-0312</span>
+    </div>
+
+    <div class="section-head">Health &amp; Medical</div>
+
+    <div class="listing" data-cat="health medical">
+      <span class="biz-name"><span class="bullet">»</span><a href="#">Bossier Family Dentistry</a> <span class="tag-new">New</span></span>
+      <span class="biz-sub">General · Pediatric · Orthodontics</span>
+      <span class="biz-phone">(318) 555-0404</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="health medical">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">North Bossier Urgent Care</a></span>
+      <span class="biz-sub">Walk-Ins Welcome · Open 7 Days</span>
+      <span class="biz-phone">(318) 555-0410</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="health medical">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Family Pharmacy</a></span>
+      <span class="biz-sub">Prescriptions · Immunizations · Delivery</span>
+      <span class="biz-phone">(318) 555-0411</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="health medical">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Parish Physical Therapy</a></span>
+      <span class="biz-sub">Sports Rehab · Post-Surgery · Pediatric</span>
+      <span class="biz-phone">(318) 555-0412</span>
+    </div>
+
+    <div class="section-head">Automotive</div>
+
+    <div class="listing" data-cat="automotive">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Auto Repair</a></span>
+      <span class="biz-sub">Full Service · All Makes &amp; Models</span>
+      <span class="biz-phone">(318) 555-0501</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="automotive">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">North Parish Car Wash</a></span>
+      <span class="biz-sub">Full Detail · Express Wash</span>
+      <span class="biz-phone">(318) 555-0502</span>
+    </div>
+
+    <!-- List CTA -->
+    <div class="list-cta">
+      <div style="margin-bottom:6px; color:#888;">Own a Benton business?</div>
+      <a href="#">» Add Your Free Listing «</a>
+      &nbsp;|&nbsp;
+      <a href="#" style="color:#cc0000;">» Go Premium — $49/mo «</a>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="col" id="col-right">
+
+    <div class="section-head">Churches &amp; Faith</div>
+
+    <div class="listing" data-cat="churches faith">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">First Baptist Church Benton</a></span>
+      <span class="biz-sub">Sunday Services · Youth · Community</span>
+      <span class="biz-phone">(318) 555-0505</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="churches faith">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Assembly of God</a></span>
+      <span class="biz-sub">Worship · Missions · Family Programs</span>
+      <span class="biz-phone">(318) 555-0506</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="churches faith">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Calvary Chapel North Bossier</a></span>
+      <span class="biz-sub">Contemporary Worship · All Welcome</span>
+      <span class="biz-phone">(318) 555-0507</span>
+    </div>
+
+    <div class="section-head">Education &amp; Childcare</div>
+
+    <div class="listing" data-cat="education childcare">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Parish Schools</a></span>
+      <span class="biz-sub">K-12 Public Education · Enrollment Open</span>
+      <span class="biz-phone">(318) 555-0601</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="education childcare">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Little Learners Academy</a> <span class="tag-new">New</span></span>
+      <span class="biz-sub">Daycare &amp; Pre-K · Ages 6 Weeks – 5</span>
+      <span class="biz-phone">(318) 555-0602</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="education childcare">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Christian Academy</a></span>
+      <span class="biz-sub">Private K-12 · Faith-Based Curriculum</span>
+      <span class="biz-phone">(318) 555-0603</span>
+    </div>
+
+    <div class="section-head">Shopping &amp; Retail</div>
+
+    <div class="listing" data-cat="shopping retail">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Benton Hardware &amp; Supply</a></span>
+      <span class="biz-sub">Tools, Lumber, Home Improvement</span>
+      <span class="biz-phone">(318) 555-0701</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="shopping retail">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Parish Florist</a></span>
+      <span class="biz-sub">Fresh Arrangements · Same-Day Delivery</span>
+      <span class="biz-phone">(318) 555-0702</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="shopping retail">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Feed &amp; Farm</a></span>
+      <span class="biz-sub">Feed, Seed, Livestock Supplies</span>
+      <span class="biz-phone">(318) 555-0703</span>
+    </div>
+
+    <div class="section-head">Government &amp; Utilities</div>
+
+    <div class="listing" data-cat="government utilities">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Town of Benton</a></span>
+      <span class="biz-sub">City Hall · Permits · Public Works</span>
+      <span class="biz-phone">(318) 965-2781</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="government utilities">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Parish Police Jury</a></span>
+      <span class="biz-sub">Parish Government · Road &amp; Drainage</span>
+      <span class="biz-phone">(318) 226-6950</span>
+    </div>
+    <hr class="col-rule">
+    <div class="listing" data-cat="government utilities">
+      <span class="biz-name"><span class="bullet">·</span><a href="#">Bossier Parish Library</a></span>
+      <span class="biz-sub">Books, Events, Community Programs</span>
+      <span class="biz-phone">(318) 746-1693</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+  <div style="margin-bottom:6px;">
+    <a href="#">HOME</a> &nbsp;|&nbsp;
+    <a href="#">ADD LISTING</a> &nbsp;|&nbsp;
+    <a href="#">ADVERTISE</a> &nbsp;|&nbsp;
+    <a href="#">CONTACT</a>
+  </div>
+  <div>© 2025 BENTONLA.COM · ALL RIGHTS RESERVED · BOSSIER PARISH, LOUISIANA</div>
+</div>
+
+<script>
+  // Dateline
+  const days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+  const months = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+  const now = new Date();
+  document.getElementById('dateline').textContent =
+    days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+
+  // Search filter
+  function filterListings() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    document.querySelectorAll('.listing').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+    document.querySelectorAll('hr.col-rule').forEach(hr => {
+      // hide HR if next sibling listing is hidden
+      const next = hr.nextElementSibling;
+      if (next && next.classList.contains('listing')) {
+        hr.style.display = next.style.display === 'none' ? 'none' : '';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
